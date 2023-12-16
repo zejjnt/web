@@ -26,7 +26,7 @@ function updateTopLists() {
       if (Object.prototype.hasOwnProperty.call(data.top_queries, domain)) {
         // Sanitize domain
         domain = utils.escapeHtml(domain);
-        url = '<a href="queries.php?domain=' + domain + '">' + domain + "</a>";
+        url = '<a onauxclick="window.open(\'https://google.com/search?q=' + domain + '\', \'_blank\')" href="queries.php?domain=' + domain + "</a>";
         domaintable.append(
           "<tr><td>" +
             url +
@@ -62,7 +62,7 @@ function updateTopLists() {
               "</td> </tr> "
           );
         } else {
-          url = '<a href="queries.php?domain=' + printdomain + '">' + printdomain + "</a>";
+          url = '<a onauxclick="window.open(\'https://google.com/search?q=' + printdomain + '\', \'_blank\')" href="queries.php?domain=' + printdomain + '">' + printdomain + "</a>";
           adtable.append(
             "<tr><td>" +
               url +
